@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 const host = process.env.HOST || 'localhost';
 
 const server = http.createServer(app);
-const io = socketio(server, { cors: { origin: '*' }});
+const io = socketio(server, { cors: { origin: '*' }}); 
 
 io.on('connection', (socket) => {
     console.log('We have a new connection!');

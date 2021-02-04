@@ -5,7 +5,6 @@ const http = require('http');
 const { addUser, removeUser, getUsers, getUsersInRoom} = require('./users');
 
 const port = process.env.PORT || 5000;
-const host = process.env.HOST || 'localhost';
 
 const server = http.createServer(app);
 const io = socketio(server, { cors: { origin: '*' }}); 
@@ -46,8 +45,8 @@ io.on('connection', (socket) => {
 
 })
 
-server.listen(port, host, () => {
+server.listen(port, () => {
     console.log(`\n===============================================`);
-    console.log(`   Server running on: http://${host}:${port}/`);
+    console.log(`   Chat-app server running on port ${port}!`);
     console.log(`===============================================\n`);
 })
